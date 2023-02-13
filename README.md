@@ -1,1 +1,1 @@
-## A social medai app with firebase and react.
+## A social media app with firebase and react.
