@@ -1,1 +1,2 @@
-# A social medai app with firebase and react.
+# Social media app with reactJs and Typscript
+
