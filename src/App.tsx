@@ -1,10 +1,20 @@
+import {BrowserRouter as Router, Routes,Route } from 'react-router-dom';
+
 import './App.css';
+import Navbar from './components/Navbar';
+import Login from './pages/login';
+import Main from './pages/main';
+
 
 function App() {
   return (
-    <div className="App">
-       <h1>Hello there, I am with typscript now.</h1>
-    </div>
+    <Router>
+    <Navbar/>
+     <Routes>
+      <Route path='/' element={<Main/>}/>
+      <Route path='/login' element={<Login/>} />
+     </Routes> 
+    </Router>
   );
 }
 
