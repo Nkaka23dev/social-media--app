@@ -9,7 +9,6 @@ export default function Home() {
   const postRef = collection(db, 'posts')
   const getPosts = async () => {
     const data = await getDocs(postRef);
-    console.log('Data', data.docs);
   }
   getPosts()
   return (

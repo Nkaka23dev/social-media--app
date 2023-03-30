@@ -11,7 +11,6 @@ export default function Navbar() {
     signOut(auth);
     navigate('/')
   }
-  console.log(user)
   return (
     <section className='shadow-xl'>
       <div className='max-w-6xl mx-auto py-4 flex justify-between  items-center'>
