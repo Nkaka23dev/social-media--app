@@ -11,7 +11,6 @@ export default function Navbar() {
     signOut(auth);
     navigate('/')
   }
-  console.log(user)
   return (
     <section className='shadow-xl'>
       <div className='max-w-6xl mx-auto py-4 flex justify-between  items-center'>
@@ -19,7 +18,7 @@ export default function Navbar() {
           LOGO
         </div>
         <div className='flex gap-10 text-xl items-center font-semibold'>
-          {!user ? <NavLink to="/login" className='hover:underline'>Login</NavLink>:   <NavLink to="/login" className='hover:underline'>Create Posts</NavLink>}
+          {!user ? <NavLink to="/login" className='hover:underline'>Login</NavLink> : <NavLink to="/create" className='hover:underline'>Create Posts</NavLink>}
           <NavLink to="/" className='hover:underline'>Home</NavLink>
 
           <div className='flex items-center gap-6'>
