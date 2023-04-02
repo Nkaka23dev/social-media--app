@@ -6,7 +6,8 @@ import { getDocs, collection } from 'firebase/firestore'
 export default function Home() {
   const [user] = useAuthState(auth);
   const [postList, setPostList] = useState(null);
-  const postRef = collection(db, 'posts')
+  const postRef = collection(db, 'posts');
+  
   const getPosts = async () => {
     const data = await getDocs(postRef);
   }
