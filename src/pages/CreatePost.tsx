@@ -1,6 +1,10 @@
 import { useForm } from 'react-hook-form'
 import * as yup from "yup"
 import { yupResolver } from '@hookform/resolvers/yup';
+import { addDoc, collection } from 'firebase/firestore';
+import { auth, db } from '../config/firebase';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 
 interface Posts {
   title: string,
@@ -14,8 +18,17 @@ export default function CreatePost() {
   const { register, handleSubmit, formState: { errors } } = useForm<Posts>({
     resolver: yupResolver(schema),
   });
-  const onSubmit = (data: Posts) => {
-    console.log("SUBMITTED DATA", data)
+  const [user] = useAuthState(auth)
+  const postRef = collection(db, "posts");
+  const navigate = useNavigate();
+
+  const onSubmit = async (data: Posts) => {
+    await addDoc(postRef, {
+      ...data,
+      username: user?.displayName,
+      userId: user?.uid
+    });
+    navigate("/")
   }
   return (
     <section>
