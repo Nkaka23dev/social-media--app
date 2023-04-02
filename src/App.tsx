@@ -2,7 +2,7 @@ import { createRoutesFromElements, Route, RouterProvider } from "react-router"
 import { createBrowserRouter } from "react-router-dom"
 import PageLayout from "./components/PageLayout"
 import CreatePost from "./pages/CreatePost"
-import Home from "./pages/Home"
+import Home from "./pages/main/Home"
 import Login from "./pages/Login"
 
 function App() {

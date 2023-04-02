@@ -7,7 +7,7 @@ export default function PageLayout() {
             <div>
                 <Navbar />
             </div>
-            <div className='max-w-6xl mx-auto mt-10'>
+            <div className='max-w-6xl mx-auto mt-32'>
                 <Outlet />
             </div>
         </section>

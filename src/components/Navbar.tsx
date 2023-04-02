@@ -9,11 +9,11 @@ export default function Navbar() {
   const [user] = useAuthState(auth)
   const logUserOut = () => {
     signOut(auth);
-    navigate('/')
+    navigate('/login')
   }
   return (
-    <section className='shadow-xl'>
-      <div className='max-w-6xl mx-auto py-4 flex justify-between  items-center'>
+    <section className='shadow-xl top-0 left-0 right-0 w-full fixed z-50 bg-white'>
+      <div className='max-w-4xl mx-auto py-4 flex justify-between  items-center'>
         <div className='uppercase text-2xl font-bold'>
           LOGO
         </div>
